@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Diplome Management System</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body th:extends="class">
+    <div class="container my-2">
+        <h1>Diploma List</h1>
+
+        <a th:href="@{/diplomas/create}" th:onclick="addParents()" class="btn btn-primary btn-sm mb-3">Add Diploma</a>
+
+        <table border="1" class="table table-striped table-responsive-md">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Action</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="diploma : ${diplomas}">
+                    <td th:text="${diploma.id}"></td>
+                    <td th:text="${diploma.name}"></td>
+                    <td>
+                        <a th:href="@{/diplomas/update/{id}(id=${diploma.id})}" class="btn btn-primary">Update</a>
+                        <a th:if="${#authorization.expression('hasAuthority(''ROLE_ADMIN'')')}" th:href="@{/diplomas/delete/{id}(id=${diploma.id})}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <a th:href="@{/dashboards}"> Back to Dashborad</a>
+    </div>
+
+</body>
+
+</html>

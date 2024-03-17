@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/dashboard.css}" />
+    <script th:src="@{/js/script.js}"></script>
+   
+
+</head>
+
+<body>
+    <div class="admin">
+        <header class="admin__header">
+            <div  class="logo">
+                <h1>Supmangment</h1>
+            </div>
+            <div class="toolbar">
+                
+                <a href="#" class="logout">Log Out</a>
+            </div>
+        </header>
+        <nav class="admin__nav">
+            <ul class="menu">
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Dashboard</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link" th:onclick="loadClasses()">classes</a>
+
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link" th:onclick="loadModules()">modules</a>
+
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link" th:onclick="loadParents()">parents</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link" th:onclick=" loadSessions()">sessions</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link" th:onclick="loadStudents()">students</a>
+                </li>
+
+                <li class="menu__item">
+                    <a href="#" class="menu__link" th:onclick=" loaddiplomes()">diplomes</a>
+                </li>
+                <li class="menu__item">
+                    <a th:if="${#authorization.expression('hasAuthority(''ROLE_ADMIN'')')}" href="#" class="menu__link" th:onclick="loadTeachers()">Teachers</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link" th:onclick="">calendriers</a>
+                </li>
+                <li class="menu__item">
+                    <a th:if="${#authorization.expression('hasAuthority(''ROLE_ADMIN'')')}" href="#" class="menu__link"  th:onclick="loadUsers()">users</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="admin__main" id="adminMain">
+            <h1>cheikh sidi taher</h1>
+        </main>
+        
+        
+        <footer class="admin__footer">
+            <h1>footer</h1>
+        </footer>
+    </div>
+
+
+  
+    
+</body>
+
+</html>

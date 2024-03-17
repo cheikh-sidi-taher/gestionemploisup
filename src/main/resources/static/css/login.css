@@ -1,0 +1,33 @@
+
+
+body{
+    background-color: blue;
+}
+
+
+
+.container{
+    margin-top: 130px;
+    align-items: center;
+   
+   
+}
+
+.container .card .card-header {
+   
+   background-color: rgb(226, 100, 55);
+   
+}
+.container .card .card-header h2{
+   
+   color: white;
+    
+ }
+ 
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>teacher Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Save Teacher</h2>
+
+        <form action="#" th:action="@{/teachers/create}" th:object="${teacher}" method="POST">
+            <input type="text" th:field="*{name}" placeholder="Teacher Name" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{firstName}" placeholder="firstName Name" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{subject}" placeholder="subject Name" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{diploma}" placeholder="diploma Name" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{cvFile}" placeholder="cvFile Name" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{tel}" placeholder="Teacher Tel" class="form-control mb-4 col-4">
+          
+         
+
+            <!-- Add more input fields as needed for your ClassDTO properties -->
+
+            <button type="submit" class="btn btn-primary btn-sm mb-3"> Save teacher</button>
+        </form>
+
+        <hr>
+
+        <a th:href="@{/teachers}"> Back to Teachers List</a>
+    </div>
+</body>
+
+</html>
